@@ -5,13 +5,15 @@ project(getopt VERSION 1.0 LANGUAGES C)
 add_library(getopt STATIC)
 target_sources(getopt
     PRIVATE
-        ya_getopt.c
-        ya_getopt.h
+        getopt.c
+        getopt.h
         )
+
 target_compile_features(getopt
     INTERFACE
         c_std_11
         )
+
 if(MSVC)
     target_compile_options(getopt
         INTERFACE
@@ -23,3 +25,8 @@ else()
             -Wall -Wextra -Wpedantic
             )
 endif()
+
+target_include_directories(getopt
+    INTERFACE
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        )

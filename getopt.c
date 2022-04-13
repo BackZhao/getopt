@@ -34,7 +34,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ya_getopt.h"
+
+#include "getopt.h"
 
 char *ya_optarg = NULL;
 int ya_optind = 1;
